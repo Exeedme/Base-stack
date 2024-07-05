@@ -1,0 +1,52 @@
+{
+  "name": "stack-boilerplate",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "migration": "typeorm-ts-node-commonjs migration:create ./src/db/migrations/TODO",
+    "migrate": "cross-env NODE_TLS_REJECT_UNAUTHORIZED=\"0\" typeorm-ts-node-commonjs migration:run -d ./dist/db/index.js",
+    "start:web": "node dist/bin/web.js",
+    "start:worker": "node dist/bin/worker.js",
+    "build": "tsc",
+    "dev": "nodemon --config development/nodemon.build.json",
+    "web": "nodemon --config development/nodemon.dev.json dist/bin/web.js",
+    "worker": "nodemon --config development/nodemon.dev.json dist/bin/worker.js"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^5.0.2",
+    "@types/compression": "^1.7.5",
+    "@types/cookie-parser": "^1.4.7",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/morgan": "^1.9.9",
+    "@types/node": "^20.14.9",
+    "@types/uuid": "^10.0.0",
+    "cross-env": "^7.0.3",
+    "nodemon": "^3.1.4",
+    "rimraf": "^5.0.7",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.2"
+  },
+  "dependencies": {
+    "@logdna/logger": "^2.6.7",
+    "bcrypt": "^5.1.1",
+    "compression": "^1.7.4",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "date-fns": "^3.6.0",
+    "envalid": "^8.0.0",
+    "express": "^4.19.2",
+    "graphile-worker": "^0.16.6",
+    "helmet": "^7.1.0",
+    "morgan": "^1.10.0",
+    "pg": "^8.12.0",
+    "rate-limiter-flexible": "^5.0.3",
+    "redis": "^4.6.14",
+    "reflect-metadata": "^0.2.2",
+    "typeorm": "^0.3.20",
+    "uuid": "^10.0.0",
+    "zod": "^3.23.8",
+    "zod-validation-error": "^3.3.0"
+  }
+}
